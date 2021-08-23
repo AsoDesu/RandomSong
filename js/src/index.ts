@@ -60,8 +60,16 @@ async function getMap() {
 		attempt++;
 		console.log("Map not found, Attempt: " + attempt);
 		getMap();
+		return;
+	}
+	if (mapData.automapper) {
+		attempt++;
+		console.log("BeatSage OMEGALUL");
+		getMap();
+		return;
 	}
 
+	attempt = 0;
 	// Set Name, Mapper, and Author
 	document.getElementById("songTitle").innerHTML = mapData.name;
 	// Set desc
