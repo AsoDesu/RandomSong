@@ -59,7 +59,7 @@ async function getMap() {
         getMap();
         return;
     }
-    if (mapData.automapper) {
+    if (mapData.automapper == true) {
         attempt++;
         console.log("BeatSage OMEGALUL");
         getMap();
