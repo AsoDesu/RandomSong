@@ -1,0 +1,26 @@
+.centered {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	/* bring your own prefixes */
+	transform: translate(-50%, -50%);
+}
+
+.easy {
+	background-color: #3cb371 !important;
+}
+.normal {
+	background-color: #59b0f4 !important;
+}
+.hard {
+	background-color: #ff6347 !important;
+}
+.expert {
+	background-color: #bf2a42 !important;
+}
+.expertplus {
+	background-color: #8f48db !important;
+}
+.c {
+	background-color: #37373a !important;
+}
