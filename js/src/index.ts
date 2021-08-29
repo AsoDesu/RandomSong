@@ -47,7 +47,7 @@ async function getMap() {
 	let number = parseInt(latest.docs[0].id, 16);
 
 	let newNumber = Math.floor(Math.random() * number + 1);
-	let newHex = newNumber.toString(16);
+	let newHex = "1bbc8"; //newNumber.toString(16);
 
 	let mapData: BeatSaverMap;
 	try {
@@ -73,7 +73,15 @@ async function getMap() {
 	// Set Name, Mapper, and Author
 	document.getElementById("songTitle").innerHTML = mapData.name;
 	// Set desc
-	document.getElementById("description").innerHTML = mapData.description.replace(/(\r\n|\n|\r)/gm, "<br />");
+	let diff = mapData.versions[0].diffs[mapData.versions[0].diffs.length - 1];
+	document.getElementById("description").innerHTML =
+		mapData.description.replace(/(\r\n|\n|\r)/gm, "<br />") +
+		'<h6 class="warnings">' +
+		(diff.me ? "<br> Requires Mapping Extentions" : "") +
+		(diff.ne ? "<br> Requires Noodle Extentions" : "") +
+		(diff.chroma ? "<br> Has Chroma" : "") +
+		(diff.cinema ? "<br> Has Cinema" : "") +
+		"</h6>";
 
 	document.getElementById("songAuthor").innerHTML = mapData.metadata.songAuthorName;
 	document.getElementById("songMapper").innerHTML = "Mapped by " + mapData.metadata.levelAuthorName;

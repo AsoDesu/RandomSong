@@ -24,3 +24,7 @@
 .c {
 	background-color: #37373a !important;
 }
+
+.warnings {
+	color: red;
+}
