@@ -45,7 +45,7 @@ async function getMap() {
     let latest = await client.Latest();
     let number = parseInt(latest.docs[0].id, 16);
     let newNumber = Math.floor(Math.random() * number + 1);
-    let newHex = "1bbc8"; //newNumber.toString(16);
+    let newHex = newNumber.toString(16);
     let mapData;
     try {
         mapData = await client.getMapFromId(newHex);
